@@ -1,0 +1,151 @@
+
+body{
+	font-family: "Century Gothic"
+}
+
+.boldo{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.fondo{
+	background-color: #99782B;
+	color:#FFFFFF;
+}
+
+.fondo p{
+	font-size: 25px;
+}
+
+.contenido{
+	padding: 5px;
+	background-color: #161414;
+	font-size: 14px;
+	color: #FFFFFF;
+	
+}
+
+.detras {
+   background-color: #161414;
+}
+
+.shadow{
+	color:#0C0B0B;
+	text-shadow: 4px 4px 4px #FFFFFF;
+}
+
+.shadow h3{
+	font-size: 30px;
+}
+
+.shadow p{
+	font-size: 20px;
+}
+
+.texto{
+	font-size: 20px;
+}
+
+
+.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 15px;
+}
+
+.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 15px;
+}
+
+.fondo{
+	background-color: #C2A560;
+	color:#FFFFFF;
+}
+
+.fondo p{
+	font-size: 14px;
+}
+
+a .inmage{
+	height: 200px;
+	width: 180px;
+
+}
+
+
+
+.covers{
+
+	margin: 0 auto;
+}
+
+.covers img{
+	
+	vertical-align: middle;
+	margin: 10px;
+	box-shadow: 4px 4px 10px #444444;	
+}
+
+.foco{
+    -webkit-transition: all .6s;
+    transition: all .6s;
+}
+
+
+.foco:hover {
+ -webkit-transform : scale(1.8);
+         transform : scale(1.8;
+ 		 
+}
+
+.contacto-left{
+	float:left;
+	padding: 15px;
+	width: 600px;
+
+}
+
+.contacto-left p{
+
+	font-size: 28px;
+}
+
+/*.right{
+	float: right;
+	padding:10px;
+	width: 47%;
+	padding: 10px;
+	background-color: #1C2024;
+}
+
+.floatmage{
+	float: left;
+	height: 200px;
+	width: 200px;
+	
+}*/
+
+@media screen and (min-width: 480px) {
+    div .floatmage {
+        width:50%;
+        height: 50%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    div img .inmage{
+    	display: block;
+    	margin: 0 auto;
+    }
+}
+
