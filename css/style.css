@@ -1,10 +1,23 @@
 
 body{
-	font-family: "Century Gothic"
+	font-family: "Century Gothic";
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    color:#0D0C0C;
+     
 }
 
 header{
 	padding-bottom:5%;
+}
+
+main {
+            flex: 1;
+        }
+
+.cont{
+	background-color:#eeee;
 }
 
 .boldo{
@@ -26,22 +39,39 @@ header{
 	font-size: 25px;
 }
 
-.contenido{
+
+
+.contenid
 	padding: 5px;
-	background-color: #161414;
+	background-color: #F9F3F3;
 	font-size: 14px;
-	color: #FFFFFF;
+	color: #100F0F;
 	
 }
 
+
+
+ul .dropping{
+	color:#1A9046;
+}
+
+ li.inBoton{
+	width:100%;
+	background-color:#1A9046;
+	font-size:18px;
+	color:#FFFFFF;
+	text-align:center;
+	padding: 5px;
+	margin-bottom:10px;
+}
+
+
 .detras {
-   background-color: #161414;
+   background-color: #F6F1F1;
 
 }
 
-.random{
-	padding-top:13%;
-}
+
 
 .shadow{
 	color:#0C0B0B;
@@ -113,6 +143,9 @@ a .inmage{
 
 }
 
+.genre{
+	margin-bottom:20px;
+}
 
 /*.foco:hover {
  -webkit-transform : scale(1.8);
@@ -123,7 +156,7 @@ a .inmage{
 .contacto-left{
 	float:left;
 	padding: 15px;
-	width: 600px;
+	
 
 }
 
@@ -135,7 +168,12 @@ a .inmage{
 .contacto-right{
 	background-color:#484242;
 	color:#FFFFFF;
-	padding-bottom: 40px;
+	padding:13px;
+	
+	}
+
+.sombra{
+	box-shadow: 10px 10px 10px;
 }
 
 textarea{
@@ -169,8 +207,7 @@ textarea{
 	padding-top: 30px;
 	background-color:#484242;
 	color:#FFFFFF;
-	width: 600px;
-	height: 300px;
+	border-radius: 20%;
 
 }
 

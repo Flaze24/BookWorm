@@ -1,0 +1,20 @@
+{
+  "name": "bookworm",
+  "version": "1.0.0",
+  "description": "Actividad Numero 2 de Curso 4 Geeks. BookWorm es una pagina que se enfoca en descargar libros (aunque en estos momentos solo esta la vista)",
+  "main": "index.js",
+  "scripts": {
+    "browser-sync": "browser-sync start --server --files \"./css/*.css\" \"./*.html\" \"js/*.js\""
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flaze24/BookWorm.git"
+  },
+  "author": "Ellery Ferrer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flaze24/BookWorm/issues"
+  },
+  "homepage": "https://github.com/Flaze24/BookWorm#readme"
+}
