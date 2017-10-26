@@ -125,6 +125,16 @@ a .inmage{
 
 }
 
+#form{
+	width:600px;
+}
+
+.boton{
+	margin-top:25px;
+	width:150px;
+
+}
+
 
 .foco{
     -webkit-transition: all .6s;

@@ -2,7 +2,6 @@
 "use strict"
 
 
-
 let contactoForm= document.querySelector("#contactoForm");
 let loginForm= document.querySelector("#loginForm");
 let regForm= document.querySelector("#regForm");
