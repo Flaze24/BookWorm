@@ -182,6 +182,7 @@ a .inmage{
 	
 	}
 
+
 .sombra{
 	box-shadow: 10px 10px 10px;
 }
@@ -199,7 +200,7 @@ textarea{
 	
 }*/
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 412px) {
      .floatmage {
         width:50%;
         height: 50%;
@@ -207,9 +208,14 @@ textarea{
         margin: 0 auto;
     }
 
+
     div img .inmage{
     	display: block;
     	margin: 0 auto;
+    }
+
+    #lenguaje{
+    	margin-top:20px;
     }
 }
 
@@ -219,5 +225,10 @@ textarea{
 	color:#FFFFFF;
 	border-radius: 20%;
 
+}
+
+.foPre{
+	width: 130px;
+	height: 190px;
 }
 
