@@ -67,13 +67,17 @@ let crearElementos = (data) =>{
 												<br>
 												<strong>${es.volumeInfo.title}</strong>
 												<p>Autores: ${es.volumeInfo.authors ? es.volumeInfo.authors : "Desconocido"}</p>
-												<a href="#" class="btn btn-primary revisar" id="${es.id}">Revisar</a>
+												<a href="#" class="btn btn-primary revisar" id="${es.id}" data-toggle="modal" data-traget="#libModal">Revisar</a>
 											</div>`
 											// i++;
 											
 					// if(i==3){
 					// 	resultado.innerHTML+=`</div>`
 					// }
+
+					setTimeout(function(){
+							document.getElementById(es.id).addEventListener("click", infoBook(es))
+					})
 								
 					console.log(resultado);
 
@@ -86,4 +90,31 @@ let crearElementos = (data) =>{
 										
 				});						
 
+}
+
+let infoBook= (arg)=>{
+	let modalHeader=document.querySelector("#modalHeader");
+	let modalBody=document.querySelector("#modalBody");
+	modalHeader="";
+	modalBody="";
+	console.log(arg.id);
+	fetch(`https://www.googleapis.com/books/v1/volumes/${arg.id}&key=${key}`)
+	.then((response)=>response.json())
+	.then((data)=>{
+		console.log(data);
+		modalHeader.innerHTML=data.volumeInfo.title;
+		modalBody.innerHTML=`<div class="container">
+								<div class="row text-center>
+									<div class="col-xs-12 col-sm-6">
+										<img class="image-responsive" src="${data.volumeInfo.imageLinks ? data.volumeInfo.imageLinks.thumbnail : unavailable }"											
+									</div>
+									<div class="col-xs-12 col-sm-6">
+										
+									</div>
+								</div>
+							</div>`;
+	})
+	.catch((error)=>{
+					console.log(error);
+			})
 }
