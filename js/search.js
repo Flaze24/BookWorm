@@ -6,14 +6,55 @@ const key="AIzaSyA7j7MlEFh0-LR0btN_w65bllOrpgfFx1Y";
 busBook.addEventListener('click', function(){
 		const sear=document.querySelector("#search").value;
 		const leng=document.querySelector("#lenguaje").value;
+		const author=document.querySelector("#autor").value;
 		const search=sear.replace(/\s/g,"+");
 		resultado.innerHTML=""
 		console.log(search);
 		if(!search==""){
-			fetch(`${link}"${search}"&langRestrict=${leng}&maxResults=20&orderBy=relevance&key=${key}`)
+
+			if(!author==""){
+
+				fetchwAuthor(search, leng, author);
+
+			}else{
+				fetchSearch(search, leng);
+				
+			}
+			
+		}else{
+			alert("No puede tener campos vacios");
+		}
+
+})
+
+let fetchSearch =(search, lang) => {
+
+	fetch(`${link}"${search}"&langRestrict=${lang}&maxResults=20&orderBy=relevance&key=${key}`)
 			.then((response)=>response.json())
 			.then((data)=>{
-				let book=data.items;
+				crearElementos(data);						
+
+			})
+			.catch((error)=>{
+					console.log(error);
+			})
+}
+
+let fetchwAuthor = (search, leng, author) =>{
+	fetch(`${link}"${search}"+inauthor:${author}&langRestrict=${leng}&maxResults=20&orderBy=relevance&key=${key}`)
+			.then((response)=>response.json())
+			.then((data)=>{
+					
+				crearElementos(data);
+			})
+			.catch((error)=>{
+					console.log(error);
+			})
+}
+
+let crearElementos = (data) =>{
+
+	let book=data.items;
 				let unavailable="../img/unavailable.png"
 				console.log(book);
 				book.map((es)=>{
@@ -26,7 +67,7 @@ busBook.addEventListener('click', function(){
 												<br>
 												<strong>${es.volumeInfo.title}</strong>
 												<p>Autores: ${es.volumeInfo.authors ? es.volumeInfo.authors : "Desconocido"}</p>
-												<a href="#" class="btn btn-primary revisar">Revisar</a>
+												<a href="#" class="btn btn-primary revisar" id="${es.id}">Revisar</a>
 											</div>`
 											// i++;
 											
@@ -43,15 +84,6 @@ busBook.addEventListener('click', function(){
 					// 	console.log(envio);
 					// })
 										
-				});							
+				});						
 
-			})
-			.catch((error)=>{
-					console.log(error);
-			})
-			
-		}else{
-			alert("No puede tener campos vacios");
-		}
-
-})
+}

@@ -163,6 +163,10 @@ a .inmage{
  		 
 }*/
 
+.titulo{
+	color:#FFFFFF;
+}
+
 .contacto-left{
 	float:left;
 	padding: 15px;
@@ -227,8 +231,17 @@ textarea{
 
 }
 
+.icon{
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
 .foPre{
 	width: 130px;
 	height: 190px;
+}
+
+.botonLog{
+	align-self:center;
 }
 
