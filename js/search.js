@@ -76,7 +76,10 @@ let crearElementos = (data) =>{
 					// }
 
 					setTimeout(function(){
-							document.getElementById(es.id).addEventListener("click", infoBook(es))
+							document.getElementById(es.id).addEventListener("click", function(e){
+								e.prevetnDefault();
+								infoBook(es)
+							})
 					})
 								
 					console.log(resultado);
