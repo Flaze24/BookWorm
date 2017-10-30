@@ -77,7 +77,7 @@ let crearElementos = (data) =>{
 
 					setTimeout(function(){
 							document.getElementById(es.id).addEventListener("click", function(e){
-								e.prevetnDefault();
+								e.preventDefault();
 								infoBook(es)
 							})
 					})
@@ -101,11 +101,11 @@ let infoBook= (arg)=>{
 	modalHeader="";
 	modalBody="";
 	console.log(arg.id);
-	fetch(`https://www.googleapis.com/books/v1/volumes/${arg.id}&key=${key}`)
+	fetch(`${arg.selfLink}`)
 	.then((response)=>response.json())
 	.then((data)=>{
 		console.log(data);
-		modalHeader.innerHTML=data.volumeInfo.title;
+		modalHeader.innerHTML=`${data.volumeInfo.title}`;
 		modalBody.innerHTML=`<div class="container">
 								<div class="row text-center>
 									<div class="col-xs-12 col-sm-6">

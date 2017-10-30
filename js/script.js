@@ -1,6 +1,5 @@
 
-"use strict"
-
+emailjs.init("user_73Ka2tvBwnNUBtC9nAjZB");
 
 let contactoForm= document.querySelector("#contactoForm");
 let loginForm= document.querySelector("#loginForm");
@@ -59,7 +58,7 @@ let validarconForm=(nombre,apellido,correo,mensaje)=>{
 		return alert("Hay Errores en los siguientes campos");
 		
 	}else{
-		return alert("Gracias por contactarnos!");
+		enviarMensaje(nombre, correo, mensaje);
 	}
 }
 
@@ -110,12 +109,15 @@ function valGenero(radio){
 let validarText=(texto)=>{
 	if(texto===''){
 			alertify.error("Ingrese Texto",2)
+			return false;
 	}else{
 		var re= /^[a-z]*$/i;
 		if(!re.test(texto)){
 			alertify.error("Solo Letras",2)
+			return false;
 		}else{
 			alertify.success("Texto Ingresado con Exito");
+			return true;
 		}	
 	}
 }
@@ -123,11 +125,14 @@ let validarText=(texto)=>{
 let validarMensaje=(mensaje)=>{
 	if(mensaje===''){
 		alertify.error("Debe ingresar un mensaje", 2);
+		return false;
 	}else{
 		if(mensaje.length > 100){
 			alertify.error("No puede excederse a 100 caracteres");
+			return false;
 		}else{
 			alertify.success("El mensaje es valido");
+			return true;
 		}
 	}
 }
@@ -136,12 +141,16 @@ let validarCorreo=(correo)=>{
 	var atSearch=(correo).indexOf("@");
 	if(atSearch ==-1){
 		alertify.error("El correo requiere un arroba (@)",2);
+		return false;
 	} else if (atSearch == 0){
 		alertify.error("Es necesario texto antes del arroba",2);
+		return false
 	}else if(atSearch == (correo.length)-1){
 		alertify.error("Es necesario texto despues del arroba",2);
+		return false;
 	}else{
 		alertify.success("Correo Ingresado existosamente");
+		return true;
 	}
 }
 
@@ -194,3 +203,10 @@ function todayIs(){
 	return fecha.getFullYear()+"-"+("0"+mes).slice(-2)+"-"+fecha.getDate();
 }
 
+let enviarMensaje = (nombre, correo, mensaje)=>{
+	emailjs.send("gmail", "contacto",{
+		rec_name:nombre,
+		rec_email:correo,
+		message:mensaje
+	})
+}
