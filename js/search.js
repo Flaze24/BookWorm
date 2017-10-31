@@ -132,8 +132,9 @@ let infoBook= (arg)=>{
 									<p>${data.volumeInfo.description ? data.volumeInfo.description : " "}</p>
 									</div>
 								</div>
-
+							
 							</div>`;
+
 	})
 	.catch((error)=>{
 					console.log(error);

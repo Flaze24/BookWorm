@@ -5,6 +5,7 @@ body{
     min-height: 100vh;
     flex-direction: column;
     color:#0D0C0C;
+    
      
 }
 
@@ -42,14 +43,6 @@ main {
 }
 
 
-
-.contenid
-	padding: 5px;
-	background-color: #F9F3F3;
-	font-size: 14px;
-	color: #100F0F;
-	
-}
 
 
 
@@ -164,6 +157,10 @@ a .inmage{
          transform : scale(1.8;
  		 
 }*/
+
+#result{
+	overflow-y:auto;
+}
 
 .titulo{
 	color:#FFFFFF;
