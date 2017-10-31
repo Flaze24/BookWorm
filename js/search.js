@@ -79,11 +79,11 @@ let crearElementos = (data) =>{
 				let unavailable="../img/unavailable.png"
 				console.log(book);
 				book.map((es)=>{
-					resultado.innerHTML +=  `<div class="col-xs-6 col-md-3 genre">
+					resultado.innerHTML +=  `<div class="col-xs-6 col-sm-3 genre">
 												<a href="#"><img src="${es.volumeInfo.imageLinks ? es.volumeInfo.imageLinks.thumbnail : unavailable }" class="foco image-responsive" style="width:130px; height:180px;"></a>
 												<br>
-												<strong>${cortarString(es.volumeInfo.title, 20)}</strong>
-												<p>Autores: ${es.volumeInfo.authors ? cortarString(es.volumeInfo.authors[0],10) : "Desconocido"}</p>
+												<strong>${cortarString(es.volumeInfo.title, 13)}</strong>
+												<p>Autores: ${es.volumeInfo.authors ? cortarString(es.volumeInfo.authors[0],5) : "Desconocido"}</p>
 												<button class="btn btn-primary revisar" id="${es.id}" data-toggle="modal" data-target="#libModal">Revisar</button>
 											</div>`
 									
@@ -114,11 +114,11 @@ let infoBook= (arg)=>{
 		modalHeader.innerHTML=`<h2>${data.volumeInfo.title}</h2>`;
 		modalBody.innerHTML=`<div class="container">
 								<div class="row text-center">
-									<div class="col-xs-6 col-md-4">
+									<div class="col-xs-12 col-sm-4">
 										<img src="${data.volumeInfo.imageLinks ? data.volumeInfo.imageLinks.thumbnail : unavailable }">	
 																
 									</div>
-									<div class="col-xs-6 col-md-4 borBook">
+									<div class="col-xs-12 col-sm-4">
 										<h3>${data.volumeInfo.title}</h3>
 										<p>Autores: ${data.volumeInfo.authors}</p>
 										<p>Fecha de Publicacion: ${data.volumeInfo.publishedDate}</p>
@@ -127,7 +127,7 @@ let infoBook= (arg)=>{
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-xs-12 col-md-8 summary">
+									<div class="col-xs-12 col-sm-8 summary">
 									<h3>${data.volumeInfo.subtitle ? data.volumeInfo.subtitle : " "}</h3>
 									<p>${data.volumeInfo.description ? data.volumeInfo.description : " "}</p>
 									</div>

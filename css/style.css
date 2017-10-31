@@ -9,11 +9,13 @@ body{
 }
 
 header{
-	padding-bottom:5%;
+	padding-bottom:60px;
+
 }
 
 main {
             flex: 1;
+
         }
 
 .cont{
@@ -221,6 +223,8 @@ textarea{
     #lenguaje{
     	margin-top:20px;
     }
+
+
 }
 
 #login{
