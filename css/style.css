@@ -250,3 +250,17 @@ textarea{
 	align-self:center;
 }
 
+/*Elementos creados con Javascript*/
+
+.category span{
+	font-size:10px;
+}
+
+.borBook{
+	border-left:1px solid #141414;
+
+}
+
+.summary{
+	margin: 0;
+}

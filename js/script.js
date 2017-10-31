@@ -1,9 +1,12 @@
+//Se inicializan las variables globales
 
 emailjs.init("user_73Ka2tvBwnNUBtC9nAjZB");
 
 let contactoForm= document.querySelector("#contactoForm");
 let loginForm= document.querySelector("#loginForm");
 let regForm= document.querySelector("#regForm");
+
+//Ciclos para verificar cual formulario se ha enviado
 
 if(contactoForm){
 	contactoForm.addEventListener("submit", function(e){
@@ -45,7 +48,7 @@ if(contactoForm){
 			})
 }
 
-
+//Funcion para validar formulario de contactenos
 
 let validarconForm=(nombre,apellido,correo,mensaje)=>{
 	
@@ -62,6 +65,8 @@ let validarconForm=(nombre,apellido,correo,mensaje)=>{
 	}
 }
 
+//Funcion para validar formulario de login
+
 let validarLogForm=(correo, password)=>{
 	if(validarCorreo(correo)&&
 		validarPass(password))
@@ -71,6 +76,8 @@ let validarLogForm=(correo, password)=>{
 		 	alertify.error("Usuario Invalido", 2);
 	}
 }
+
+//funcion para validar formulario de registro
 
 function validarRegForm(nombre, apellido, correo, password1, password2, fecha, genero1, genero2){
 	if(validarText(nombre)&&
@@ -87,6 +94,8 @@ function validarRegForm(nombre, apellido, correo, password1, password2, fecha, g
 		return alert("Hay errores en los siguientes campos");
 	}
 }
+
+//Validar genero
 
 function valGenero(radio){
 	var seleccionado=false;
@@ -105,6 +114,7 @@ function valGenero(radio){
 }
 
 
+//Validar texto
 
 let validarText=(texto)=>{
 	if(texto===''){
@@ -122,6 +132,7 @@ let validarText=(texto)=>{
 	}
 }
 
+//Validar Mensaje
 let validarMensaje=(mensaje)=>{
 	if(mensaje===''){
 		alertify.error("Debe ingresar un mensaje", 2);
@@ -136,6 +147,8 @@ let validarMensaje=(mensaje)=>{
 		}
 	}
 }
+
+//Validar Correos
 
 let validarCorreo=(correo)=>{
 	var atSearch=(correo).indexOf("@");
@@ -154,6 +167,7 @@ let validarCorreo=(correo)=>{
 	}
 }
 
+//Comparar Claves
 function compararClave(clave1, clave2){
 	if(clave1 != clave2){
 		alertify.error("Las claves no coinciden",2);
@@ -164,6 +178,7 @@ function compararClave(clave1, clave2){
 	}
 }
 
+//Validar Claves
 function validarClave(clave){
 	if(clave===''){
 		alertify.error("La clave debe tener contenido", 1);
@@ -179,7 +194,7 @@ function validarClave(clave){
 	}
 }
 
-
+//Valida la fecha ingresada para asegurarse de que no sea mayor a la actual
 function valFecha(date){
 
 	if(date===''){
@@ -197,12 +212,14 @@ function valFecha(date){
 
 }
 
+//Calcula y cambia el formato de la fecha actual
 function todayIs(){
 	var fecha= new Date();
 	var mes= ((fecha.getMonth().length+1)===1)?(fecha.getMonth()+1):(fecha.getMonth()+1);
 	return fecha.getFullYear()+"-"+("0"+mes).slice(-2)+"-"+fecha.getDate();
 }
 
+//Envio de correo al enviar formulario de contactenos
 let enviarMensaje = (nombre, correo, mensaje)=>{
 	emailjs.send("gmail", "contacto",{
 		rec_name:nombre,
